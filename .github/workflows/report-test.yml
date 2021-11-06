@@ -1,0 +1,40 @@
+name: Run test and publish report
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+
+jobs:
+  test:
+    name: Init and run test 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with: 
+          node-version: '12'
+      - run: cd react-app
+      - run: npm ci
+      - run: npm run start
+      - run: npm run test
+      
+      - name: Copy test execution data
+        run: |
+          cp -r react-app/jest-html-reporters-attach public/jest-html-reporters-attach
+          cp -r react-app/index.html public/index.html
+
+      - name: Deploy jest report
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          
+      - name: Comment about success action
+        uses: JoseThen/comment-pr@v1.1.1
+        if: github.event_name == 'pull_request'
+        with:
+          comment: 'Tests finished 👍.[Report here](https://farvater-max.github.io/puppeteer-demo/)'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
