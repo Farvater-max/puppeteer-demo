@@ -5,7 +5,7 @@ module.exports = {
       ["jest-html-reporters", {
         "filename": "index.html",
         "expand": true,
-        "openReport": true
+        "openReport": false
       }]
     ],
     verbose: true,
