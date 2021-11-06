@@ -17,10 +17,7 @@ jobs:
       - run: | 
           cd /home/runner/work/puppeteer-demo/puppeteer-demo/react-app
           npm ci
-          npm run start --if-present
-      - run: | 
-          cd /home/runner/work/puppeteer-demo/puppeteer-demo/react-app
-          npm run test
+          npm run start & npm run test
       
       - name: Copy test execution data
         run: |
