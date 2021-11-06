@@ -18,12 +18,12 @@ jobs:
           cd /home/runner/work/puppeteer-demo/puppeteer-demo/react-app
           npm ci
           npm run start
-      - run: npm run test
+          npm run test
       
       - name: Copy test execution data
         run: |
-          cp -r react-app/jest-html-reporters-attach public/jest-html-reporters-attach
-          cp -r react-app/index.html public/index.html
+          cp -r react-app/jest-html-reporters-attach jest-html-reporters-attach
+          cp -r react-app/index.html index.html
 
       - name: Deploy jest report
         uses: peaceiris/actions-gh-pages@v3
