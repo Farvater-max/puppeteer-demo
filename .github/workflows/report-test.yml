@@ -15,7 +15,7 @@ jobs:
         with: 
           node-version: '12'
       - run: | 
-          cd react-app
+          cd /home/runner/work/puppeteer-demo/puppeteer-demo/react-app
       - run: npm ci
       - run: npm run start
       - run: npm run test
