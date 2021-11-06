@@ -1,3 +1,4 @@
+const { addAttach } = require("jest-html-reporters/helper");
 const puppeteer = require('puppeteer');
 
 describe("App.js", () => {
@@ -16,7 +17,8 @@ describe("App.js", () => {
       width: 1920,
       height: 1080,
     });
-    await page.screenshot({ path: `src/test/screenshots/fullpage.png`, fullPage: true });
+    const data = await page.screenshot({ path: `src/test/screenshots/fullpage.png`, fullPage: true });
+    await addAttach(data, "test-screenshot-1", this.global);
     
   });
 

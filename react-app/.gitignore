@@ -4,10 +4,11 @@
 /node_modules
 /.pnp
 .pnp.js
-jest_html_reporters.html
 
 # testing
 /coverage
+/jest-html-reporters-attach
+index.html
 
 # production
 /build
