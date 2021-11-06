@@ -17,9 +17,9 @@ jobs:
       - run: | 
           cd /home/runner/work/puppeteer-demo/puppeteer-demo/react-app
           npm ci
-          npm run start &&
-          sleep 20 &&
-          curl http://localhost:3000 &&
+          npm run start --if-present
+      - run: | 
+          cd /home/runner/work/puppeteer-demo/puppeteer-demo/react-app
           npm run test
       
       - name: Copy test execution data
