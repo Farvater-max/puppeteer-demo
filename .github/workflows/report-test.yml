@@ -7,14 +7,15 @@ on:
 
 jobs:
   test:
-    name: Init and run test 
+    name: Start project and run test 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with: 
           node-version: '12'
-      - run: cd react-app
+      - run: | 
+          cd react-app
       - run: npm ci
       - run: npm run start
       - run: npm run test
