@@ -7,8 +7,7 @@
 
 # testing
 /coverage
-/jest-html-reporters-attach
-index.html
+
 
 # production
 /build
