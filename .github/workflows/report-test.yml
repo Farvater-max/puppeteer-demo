@@ -17,7 +17,7 @@ jobs:
       - run: | 
           cd /home/runner/work/puppeteer-demo/puppeteer-demo/react-app
           npm ci
-          npm run start & wait-on interval: 15000 & npm run test
+          npm run start & wait-on interval: 25000 & npm run test
       
       - name: Copy test execution data
         run: |
