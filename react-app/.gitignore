@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+jest_html_reporters.html
 
 # testing
 /coverage
