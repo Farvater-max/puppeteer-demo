@@ -17,7 +17,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest --config ./jest.config.js",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "start-test start 3000 test"
   },
   "eslintConfig": {
     "extends": [
@@ -38,6 +39,7 @@
     ]
   },
   "devDependencies": {
-    "jest-html-reporters": "^2.1.6"
+    "jest-html-reporters": "^2.1.6",
+    "start-server-and-test": "^1.14.0"
   }
 }
