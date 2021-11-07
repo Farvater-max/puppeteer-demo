@@ -26,7 +26,7 @@ Launches the test runner in the interactive watch mode.\
 
 ### `npm run dev`
 
-Unites command `npm run start` and `npm run test` for local app testing. This command using package `start-server-and-test` for start and test project by one command.
+Unites command `npm run start` and `npm run test` for local app testing. This command using package `start-server-and-test` for start and run test project by one command.
 
 ### `npm run build`
 
